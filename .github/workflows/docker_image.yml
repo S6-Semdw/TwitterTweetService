@@ -26,4 +26,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: semm12/twittertweetservice
-          tags: latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/twittertweetservice:latest

@@ -33,4 +33,3 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/twittertweetservice:latest
-          platform: linux/arm64/v8

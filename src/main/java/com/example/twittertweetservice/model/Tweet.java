@@ -1,29 +1,44 @@
 package com.example.twittertweetservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "tweet")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Document("tweet")
 public class Tweet {
 
+
     @Id
-    @GeneratedValue
-    private Integer id;
-    private String name;
-    private String message;
+    private String id;
+
+    private String email;
+
+    private String text;
+
+    public String getId() {
+        return id;
+    }
 
     public String getName() {
-        return name;
+        return email;
     }
 
-    public String getMessage() {
-        return message;
+    public void setName(String email) {
+        this.email = email;
     }
 
-    public Integer getId() {
-        return id;
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }

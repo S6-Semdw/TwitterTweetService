@@ -1,7 +1,15 @@
 package com.example.twittertweetservice.repo;
 
 import com.example.twittertweetservice.model.Tweet;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.twittertweetservice.model.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface TwitterTweetRepository extends JpaRepository<Tweet, Integer> {
+import java.util.List;
+import java.util.Optional;
+
+public interface TwitterTweetRepository extends MongoRepository<Tweet, Integer> {
+
+    List<Tweet> findByName(String e);
+
+    List<Tweet> findByEmail(String email);
 }
